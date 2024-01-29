@@ -6,10 +6,12 @@ import Contact from "./Contact";
 import SinglePage from "./SinglePage";
 import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
