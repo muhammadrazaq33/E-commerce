@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+section {
+  max-width: 95vw;
+  width: 1280px;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
