@@ -46,7 +46,7 @@ const Contact = () => {
             ></textarea>
             <div className="grid place-content-start">
               <input
-                type="button"
+                type="submit"
                 value="Send"
                 className="bg-amber-400 grid justify-items-start py-1 px-5 text-[1.3rem] rounded-sm cursor-pointer"
               />
