@@ -22,10 +22,10 @@ export const Footer = () => {
 
       {/* Main FOOTER  ===========> */}
       <div className=" bg-blue-950 py-[5rem]">
-        <div className=" max-w-[60rem] m-auto grid grid-cols-4 gap-[3rem]">
+        <div className=" max-w-[60rem] m-auto grid md:grid-cols-4 grid-cols-2 gap-y-10 lg:gap-x-[3rem] gap-x-[2.5rem] px-6">
           {/* ABOUT ARTICLE-1  =========> */}
           <article className=" text-[white] flex flex-col gap-3.5">
-            <h3>ABDUL STORE</h3>
+            <h3 className=" font-semibold">ABDUL STORE</h3>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit,
               provident.
@@ -33,7 +33,7 @@ export const Footer = () => {
           </article>
           {/* SUBSCRIBE  ARTICLE-2  =========> */}
           <article className=" text-[white] flex flex-col gap-4">
-            <h3>Subscribe to get new updates</h3>
+            <h3 className=" font-semibold">Subscribe to get new updates</h3>
             <form action="#" className=" flex flex-col gap-4">
               <input
                 type="email"
@@ -54,21 +54,21 @@ export const Footer = () => {
           </article>
           {/* SOCIAL  ARTICLE-3  =========> */}
           <article className=" flex flex-col gap-4">
-            <h3 className=" text-white">Follow us</h3>
-            <div className=" flex items-center gap-10">
+            <h3 className=" text-white font-semibold">Follow us</h3>
+            <div className=" flex items-center lg:gap-10 gap-5">
               <div className=" w-[2.5rem] h-[2.5rem] bg-white grid place-content-center rounded-[50%]">
                 <FaDiscord className=" text-[1.5rem]" />
               </div>
-              <div>
-                <FaInstagramSquare />
+              <div className=" w-[2.5rem] h-[2.5rem] bg-white grid place-content-center rounded-[50%]">
+                <FaInstagramSquare className=" text-[1.5rem]" />
               </div>
-              <div>
-                <FaYoutube />
+              <div className=" w-[2.5rem] h-[2.5rem] bg-white grid place-content-center rounded-[50%]">
+                <FaYoutube className=" text-[1.5rem]" />
               </div>
             </div>
           </article>
           {/* CONTACT FOOTER-4 */}
-          <article>
+          <article className="font-semibold text-[white] flex flex-col gap-4">
             <h3>CONTACT US</h3>
             <p>+337-6725198</p>
           </article>

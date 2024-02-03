@@ -7,7 +7,7 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 export const Services = () => {
   return (
     <section className=" mt-[10rem]">
-      <div className=" grid grid-cols-3 gap-5  max-w-[60rem] m-auto">
+      <div className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  max-w-[60rem] m-auto">
         {/* ARTICLE-1  =========> */}
         <article className="flex flex-col gap-4 items-center justify-center h-[18rem] bg-slate-200 rounded-md">
           <div className="w-[4.5rem] h-[4.5rem] bg-[white] grid place-content-center rounded-[50%]">
@@ -17,13 +17,13 @@ export const Services = () => {
         </article>
         {/* ARTICLE-2  =========> */}
         <article className="grid grid-rows-2 gap-4">
-          <div className="bg-slate-200 flex  gap-2  justify-center items-center rounded-md">
+          <div className="bg-slate-200 flex  lg:gap-2 gap-6 lg:justify-center justify-start items-center rounded-md lg:px-0 px-10 sm:py-0 py-10">
             <div className="w-[4.5rem] h-[4.5rem] bg-[white] grid place-content-center rounded-[50%]">
               <MdOutlineSecurity className="text-[2.5rem] text-amber-500" />
             </div>
             <p className="capitalize font-bold ">Non-contract Shipping</p>
           </div>
-          <div className="bg-slate-200 flex  gap-2   justify-center items-center rounded-md">
+          <div className="bg-slate-200 flex  lg:gap-2 gap-6 lg:justify-center justify-start items-center rounded-md lg:px-0 px-10">
             <div className="w-[4.5rem] h-[4.5rem] bg-[white] grid place-content-center rounded-[50%]">
               <GiReceiveMoney className="text-[2.5rem] text-amber-500" />
             </div>
