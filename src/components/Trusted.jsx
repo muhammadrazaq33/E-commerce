@@ -24,7 +24,6 @@ const Trusted = () => {
           </div>
         </div>
       </section>
-      ;
     </div>
   );
 };
