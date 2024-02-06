@@ -6,7 +6,7 @@ import { RiSecurePaymentLine } from "react-icons/ri";
 
 export const Services = () => {
   return (
-    <section className=" mt-[10rem]">
+    <section className=" mt-[5rem]">
       <div className=" grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  max-w-[60rem] m-auto">
         {/* ARTICLE-1  =========> */}
         <article className="flex flex-col gap-4 items-center justify-center h-[18rem] bg-slate-200 rounded-md">
