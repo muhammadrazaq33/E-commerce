@@ -24,7 +24,7 @@ const AppProvider = ({ children }) => {
       // console.log(res);
       const products = await res.data;
       // console.log(products);
-      dispatch({ type: "API_DATA", payLoad: products });
+      dispatch({ type: "API_DATA", payload: products });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
     }
