@@ -1,6 +1,7 @@
 import React from "react";
 import { useCustomHook } from "../Contaxt/ProductContaxt";
 import { NavLink } from "react-router-dom";
+import NumberFormate from "../components/cards/NumberFormate";
 
 export const FeatureProducts = () => {
   const { isLoading, featureProducts } = useCustomHook();
@@ -23,7 +24,7 @@ export const FeatureProducts = () => {
               return (
                 <NavLink to={`/singleproduct/:${id}`} key={id}>
                   <article className=" bg-white flex flex-col gap-3 p-3 rounded-md">
-                    <figure className=" overflow-hidden relative rounded-md">
+                    <figure className=" overflow-hidden relative">
                       <img
                         src={image}
                         className="hover:scale-125 w-auto"
@@ -36,7 +37,9 @@ export const FeatureProducts = () => {
                     {/* cards info ==========> */}
                     <div className=" flex justify-between items-center">
                       <h4 className=" capitalize">{name}</h4>
-                      <h4 className=" capitalize text-[blue]">{price}</h4>
+                      <h4 className=" capitalize text-[blue]">
+                        {<NumberFormate price={price} />}
+                      </h4>
                     </div>
                   </article>
                 </NavLink>
