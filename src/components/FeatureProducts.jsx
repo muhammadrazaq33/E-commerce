@@ -5,6 +5,13 @@ import NumberFormate from "../components/cards/NumberFormate";
 
 export const FeatureProducts = () => {
   const { isLoading, featureProducts } = useCustomHook();
+
+  // Loading Section of FeatureProducts
+  if (isLoading) {
+    return (
+      <div className=" text-center text-[2.5rem] mt-[5rem]">Loading...</div>
+    );
+  }
   //   console.log(featureProducts);
   return (
     <div className="bg-slate-200 mt-[5rem] py-16">

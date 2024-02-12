@@ -3,11 +3,11 @@ import Home from "./Home";
 import About from "./About";
 import Products from "./Products";
 import Contact from "./Contact";
-import SinglePage from "./SinglePage";
 import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
 import Header from "./components/Header";
 import { Footer } from "./components/Footer.jsX";
+import SinglePage from "./SinglePage";
 
 function App() {
   return (
