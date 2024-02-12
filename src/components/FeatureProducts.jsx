@@ -29,7 +29,7 @@ export const FeatureProducts = () => {
             {featureProducts.map((curEle) => {
               const { id, image, name, category, price } = curEle;
               return (
-                <NavLink to={`/singleproduct/:${id}`} key={id}>
+                <NavLink to={`/singleproduct/${id}`} key={id}>
                   <article className=" bg-white flex flex-col gap-3 p-3 rounded-md">
                     <figure className=" overflow-hidden relative">
                       <img

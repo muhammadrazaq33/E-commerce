@@ -1,26 +1,34 @@
-import React from 'react'
-import React, { useEffect } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {
-  isSingleLoading,
-  useCustomHook,
-  SingleProduct1,
-} from "./Contaxt/ProductContaxt";
+import { useCustomHook } from "./Contaxt/ProductContaxt";
 
-//http://localhost:5173/singleproduct/:thapaserialnoa
-const API = "http://localhost:5173/singleproduct/:thapaserialnoa";
+const API = "https://api.pujakaitem.com/api/products";
 
 const SinglePage = () => {
+  const { isSingleLoading, getSingleProduct, SingleProduct1 } = useCustomHook();
 
-    const { id } = useParams();
-    useEffect(() => {
-    getSingleProduct(`${API}/:${id}`);
+  const { id } = useParams();
+
+  // usestate
+  useEffect(() => {
+    getSingleProduct(`${API}?id=${id}`);
   }, []);
-  console.log(id);
+  // console.log(SingleProduct1);
 
-  return (
-    <div>SinglePage</div>
-  )
-}
+  const {
+    id: productid,
+    name,
+    company,
+    price,
+    description,
+    category,
+    stock,
+    stars,
+    reviews,
+  } = SingleProduct1;
+
+  return <div>SinglePage</div>;
+};
 
 export default SinglePage;
