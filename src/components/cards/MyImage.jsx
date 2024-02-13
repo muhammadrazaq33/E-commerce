@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-const MyImage = ({ image }) => {
+const MyImage = ({ image = [{ url: "" }] }) => {
   const [mainImage, setMainImage] = useState(image[0]);
-
+  //   console.log(image);
   return (
     <div className=" grid grid-cols-[1fr,3fr] gap-x-4 items-center">
       {/* Images =========> */}
       <div className=" flex flex-col gap-y-2">
-        {image.map((curEle, index) => {
+        {image.map((curEle) => {
           return (
-            <figure>
+            <figure key={curEle.id}>
               <img
                 src={curEle.url}
                 alt={curEle.filename}
@@ -22,7 +22,7 @@ const MyImage = ({ image }) => {
       {/* Main Image  =========> */}
       <div>
         <figure>
-          <img src={mainImage.url} alt="" />
+          <img src={mainImage.url} alt={mainImage.filename} />
         </figure>
       </div>
     </div>

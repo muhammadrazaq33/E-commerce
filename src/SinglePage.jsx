@@ -7,6 +7,7 @@ import MyImage from "./components/cards/MyImage";
 import NumberFormate from "./components/cards/NumberFormate";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import Stars from "./components/cards/Stars";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -41,7 +42,7 @@ const SinglePage = () => {
 
       {/* PRODUCT DETAILS  ==========> */}
       <div className="max-w-[60rem] m-auto mt-[6rem] p-4">
-        <div className=" grid md:grid-cols-2 grid-cols-1 gap-10">
+        <div className=" grid md:grid-cols-2 grid-cols-1 gap-12">
           {/* Product IMAGES    ===========> */}
           <div className=" flex items-center">
             <MyImage image={image} />
@@ -50,8 +51,10 @@ const SinglePage = () => {
           {/* Product Data    =============> */}
           <div className=" flex flex-col gap-2.5">
             <h3 className=" text-[2rem] font-semibold">{name}</h3>
-            <p>{stars}</p>
-            <p>{reviews} reviews</p>
+
+            {/* STAR Component */}
+            <Stars stars={stars} reviews={reviews} />
+
             <p className=" font-bold">
               MRP:{" "}
               <del>
