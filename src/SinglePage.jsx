@@ -40,10 +40,10 @@ const SinglePage = () => {
       <PageNavigation name={name} />
 
       {/* PRODUCT DETAILS  ==========> */}
-      <div className=" max-w-[60rem] m-auto mt-[6rem]">
-        <div className=" grid grid-cols-2 gap-5">
+      <div className="max-w-[60rem] m-auto mt-[6rem] p-4">
+        <div className=" grid md:grid-cols-2 grid-cols-1 gap-10">
           {/* Product IMAGES    ===========> */}
-          <div>
+          <div className=" flex items-center">
             <MyImage image={image} />
           </div>
 
@@ -65,7 +65,7 @@ const SinglePage = () => {
             </p>
             <p>{description}</p>
             {/* Icons  =======> */}
-            <div className=" flex justify-between border-b-[2px] mt-2.5">
+            <div className=" grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 gap-y-3 border-b-[2px] mt-2.5">
               {Icons.map((Icon) => {
                 const { id, icon, text } = Icon;
                 return (
@@ -73,10 +73,12 @@ const SinglePage = () => {
                     key={id}
                     className=" flex flex-col gap-1 items-center"
                   >
-                    <p className=" text-[1.5rem] h-[2.5rem] w-[2.5rem] bg-slate-200 rounded-[50%] grid place-content-center">
+                    <p className=" text-[1.3rem] h-[2.3rem] w-[2.3rem] bg-slate-200 rounded-[50%] grid place-content-center">
                       {icon}
                     </p>
-                    <p className=" text-[0.9rem]">{text}</p>
+                    <p className=" md:text-[0.7rem] sm:text-[0.8rem] text-[0.6rem]">
+                      {text}
+                    </p>
                   </article>
                 );
               })}
