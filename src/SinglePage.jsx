@@ -50,7 +50,7 @@ const SinglePage = () => {
           </div>
 
           {/* Product Data    =============> */}
-          <div className=" flex flex-col gap-2.5">
+          <div className=" flex flex-col gap-3">
             <h3 className=" text-[2rem] font-semibold">{name}</h3>
 
             {/* STAR Component */}
@@ -107,7 +107,9 @@ const SinglePage = () => {
             <div className="max-w-[100%] w-[90%] border-[2px] border-black"></div>
 
             {/* AddToCart Component ====> */}
-            {stock > 0 && <AddToCart products={SingleProduct1} />}
+            <div className=" mt-2">
+              {stock > 0 && <AddToCart products={SingleProduct1} />}
+            </div>
           </div>
         </div>
       </div>

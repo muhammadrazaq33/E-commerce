@@ -22,7 +22,7 @@ const Stars = ({ stars, reviews }) => {
   });
 
   return (
-    <div className=" flex items-center gap-3">
+    <div className=" flex items-center gap-3.5">
       <p className=" flex gap-1 text-[rgb(255,200,0)] text-[1.1rem]">
         {ratingStar}
       </p>
