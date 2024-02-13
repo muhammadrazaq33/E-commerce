@@ -8,3 +8,9 @@ section {
   margin: 0 auto;
   margin-top: 5rem;
 }
+.faded {
+  opacity: 0.5;
+}
+.active {
+  opacity: 1;
+}

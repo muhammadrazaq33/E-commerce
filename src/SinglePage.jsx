@@ -8,6 +8,7 @@ import NumberFormate from "./components/cards/NumberFormate";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Stars from "./components/cards/Stars";
+import AddToCart from "./components/cards/AddToCart";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -87,20 +88,26 @@ const SinglePage = () => {
               })}
             </div>
             {/* End of icons */}
-            <div className=" mt-2.5">
+
+            {/* product information ===> */}
+            <div className=" mt-2.5 flex flex-col gap-2">
               <p>
                 Available:{" "}
                 <span className=" font-bold">
                   {stock > 0 ? "In Stock" : "Not-Available"}
                 </span>
               </p>
+              <p>
+                ID: <span className=" font-bold">{productid}</span>
+              </p>
+              <p>
+                Brand: <span className=" font-bold">{company}</span>
+              </p>
             </div>
-            <p>
-              ID: <span className=" font-bold">{productid}</span>
-            </p>
-            <p>
-              Brand: <span className=" font-bold">{company}</span>
-            </p>
+            <div className="max-w-[100%] w-[90%] border-[2px] border-black"></div>
+
+            {/* AddToCart Component ====> */}
+            {stock > 0 && <AddToCart products={SingleProduct1} />}
           </div>
         </div>
       </div>
