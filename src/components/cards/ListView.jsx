@@ -10,7 +10,7 @@ const ListView = ({ FilterProducts }) => {
         return (
           <article
             key={id}
-            className="grid md:grid-cols-2 grid-cols-1 place-items-center gap-[2.5rem] lg:gap-[4rem] border-[2px] border-slate-200 lg:px-12 px-12 md:px-7 md:py-5 lg:py-5 py-8"
+            className="grid md:grid-cols-2 grid-cols-1 place-items-center gap-[2.5rem] lg:gap-[4.5rem] border-[2px] border-slate-200 lg:px-12 px-12 md:px-7 md:py-5 lg:py-4 py-8"
           >
             {/* image =====> */}
             <figure className="overflow-hidden">
@@ -24,7 +24,7 @@ const ListView = ({ FilterProducts }) => {
                 <p className=" font-medium text-[blue]">
                   <NumberFormate price={price} />
                 </p>
-                <p>{description.slice(0, 80)}...</p>
+                <p>{description.slice(0, 70)}...</p>
               </div>
               <NavLink to={`/singleproduct/${id}`}>
                 <button className="bg-amber-400 hover:bg-amber-300 lg:px-3.5 px-3 py-2">
