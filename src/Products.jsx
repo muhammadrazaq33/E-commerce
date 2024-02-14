@@ -5,7 +5,7 @@ import ProductList from "./components/cards/ProductList";
 import { useFilterContaxt } from "./Contaxt/FilterContaxt";
 
 const Products = () => {
-  const { FilterProducts } = useFilterContaxt();
+  // const { FilterProducts } = useFilterContaxt();
   // console.log(FilterProducts);
 
   return (
@@ -17,7 +17,7 @@ const Products = () => {
         </div>
 
         {/* SORT & LIST =====> */}
-        <div className=" grid grid-rows-2">
+        <div className="two_row">
           {/* SORT ========>*/}
           <div>
             <Sort />
