@@ -3,12 +3,12 @@ import { NavLink } from "react-router-dom";
 import NumberFormate from "./NumberFormate";
 // import NumberFormate from "../components/cards/NumberFormate";
 
-const Product = ({ curEle }) => {
+const Product = ({ curEle, BG_Color }) => {
   const { id, image, name, category, price } = curEle;
 
   return (
     <NavLink to={`/singleproduct/${id}`} key={id}>
-      <article className=" bg-white flex flex-col gap-3 p-3 rounded-md">
+      <article className={`${BG_Color} flex flex-col gap-3 p-3 rounded-md`}>
         <figure className=" overflow-hidden relative">
           <img src={image} className="hover:scale-125 w-auto" alt="" />
           <figcaption className=" absolute right-3 top-3 bg-white px-[1.5rem] py-[0.3rem] capitalize rounded-3xl hover:scale-100 cursor-pointer hover:bg-amber-400">

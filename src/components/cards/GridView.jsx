@@ -5,9 +5,15 @@ const GridView = ({ FilterProducts }) => {
   return (
     <>
       {/* GRIDVIEW ===> */}
-      <div className="grid lg:grid-cols-3 grid-cols-2 gap-3">
+      <div className="grid lg:grid-cols-3 grid-cols-2 gap-6">
         {FilterProducts.map((curEle) => {
-          return <Product key={curEle.id} curEle={curEle} />;
+          return (
+            <Product
+              key={curEle.id}
+              curEle={curEle}
+              BG_Color={`bg-slate-200`}
+            />
+          );
         })}
       </div>
     </>

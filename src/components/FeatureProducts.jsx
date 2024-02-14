@@ -28,7 +28,13 @@ export const FeatureProducts = () => {
           {/* GRIDVIEW ===> */}
           <div className="grid lg:grid-cols-3 grid-cols-2 gap-10">
             {featureProducts.map((curEle) => {
-              return <Product key={curEle.id} curEle={curEle} />;
+              return (
+                <Product
+                  key={curEle.id}
+                  curEle={curEle}
+                  BG_Color={`bg-white`}
+                />
+              );
             })}
           </div>
         </div>
