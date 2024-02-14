@@ -14,6 +14,12 @@ const FilterReducer = (state, action) => {
         ...state,
         Grid_view: true,
       };
+
+    case "SET_LISTVIEW":
+      return {
+        ...state,
+        Grid_view: false,
+      };
     default:
       return state;
   }

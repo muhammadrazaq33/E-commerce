@@ -10,7 +10,7 @@ const ProductList = () => {
     return <ListView FilterProducts={FilterProducts} />;
   }
 
-  if (Grid_view) {
+  if (Grid_view === true) {
     return <GridView FilterProducts={FilterProducts} />;
   }
 };

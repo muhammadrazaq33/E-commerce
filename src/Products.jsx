@@ -10,7 +10,7 @@ const Products = () => {
 
   return (
     <>
-      <div className="TWO_COL max-w-[60rem] m-auto px-4">
+      <div className="TWO_COL max-w-[60rem] m-auto px-4 mt-[4rem]">
         {/* FILTERSECTION   ======> */}
         <div>
           <FilterSection />

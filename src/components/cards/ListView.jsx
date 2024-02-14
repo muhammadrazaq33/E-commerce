@@ -4,7 +4,7 @@ import NumberFormate from "./NumberFormate";
 
 const ListView = ({ FilterProducts }) => {
   return (
-    <div className="flex flex-col gap-y-7">
+    <div className="flex flex-col gap-7">
       {FilterProducts.map((curEle) => {
         const { id, name, description, image, price } = curEle;
         return (

@@ -22,11 +22,17 @@ const FilterContaxtProvider = ({ children }) => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
+  // set grid view
   const setGridView = () => {
     return dispatch({ type: "SET_GRIDVIEW" });
   };
+
+  // set list view
+  const setListView = () => {
+    return dispatch({ type: "SET_LISTVIEW" });
+  };
   return (
-    <FilterContaxt.Provider value={{ ...state, setGridView }}>
+    <FilterContaxt.Provider value={{ ...state, setGridView, setListView }}>
       {children}
     </FilterContaxt.Provider>
   );
