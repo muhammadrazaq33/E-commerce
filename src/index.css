@@ -14,3 +14,8 @@ section {
 .active {
   opacity: 1;
 }
+.TWO_COL {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  gap: 5rem;
+}
