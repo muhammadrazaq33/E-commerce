@@ -1,15 +1,16 @@
 import React from "react";
 import { useFilterContaxt } from "../../Contaxt/FilterContaxt";
 import GridView from "./GridView";
+import ListView from "./ListView";
 
 const ProductList = () => {
-  const { FilterProducts, setGridView } = useFilterContaxt();
+  const { FilterProducts, Grid_view } = useFilterContaxt();
 
-  if (setGridView === "false") {
-    return <ListView />;
+  if (Grid_view === false) {
+    return <ListView FilterProducts={FilterProducts} />;
   }
 
-  if (setGridView) {
+  if (Grid_view) {
     return <GridView FilterProducts={FilterProducts} />;
   }
 };

@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import NumberFormate from "./NumberFormate";
-// import NumberFormate from "../components/cards/NumberFormate";
 
 const Product = ({ curEle, BG_Color }) => {
   const { id, image, name, category, price } = curEle;

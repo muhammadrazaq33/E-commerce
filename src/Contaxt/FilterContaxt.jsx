@@ -7,7 +7,7 @@ const FilterContaxt = createContext();
 const initialState = {
   FilterProducts: [],
   AllProducts: [],
-  Grid_view: true,
+  Grid_view: false,
 };
 
 const FilterContaxtProvider = ({ children }) => {
