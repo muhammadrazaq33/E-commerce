@@ -2,8 +2,12 @@ import React from "react";
 import FilterSection from "./components/cards/FilterSection";
 import Sort from "./components/cards/Sort";
 import ProductList from "./components/cards/ProductList";
+import { useFilterContaxt } from "./Contaxt/FilterContaxt";
 
 const Products = () => {
+  const { FilterProducts } = useFilterContaxt();
+  // console.log(FilterProducts);
+
   return (
     <>
       <div className="TWO_COL max-w-[60rem] m-auto">
