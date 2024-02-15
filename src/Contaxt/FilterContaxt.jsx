@@ -8,6 +8,7 @@ const initialState = {
   FilterProducts: [],
   AllProducts: [],
   Grid_view: false,
+  sorting_value: "lowest",
 };
 
 const FilterContaxtProvider = ({ children }) => {
@@ -31,8 +32,16 @@ const FilterContaxtProvider = ({ children }) => {
   const setListView = () => {
     return dispatch({ type: "SET_LISTVIEW" });
   };
+
+  // sorting function
+  const sorting = () => {
+    return dispatch({ type: "GET_SORT_VALUE" });
+  };
+
   return (
-    <FilterContaxt.Provider value={{ ...state, setGridView, setListView }}>
+    <FilterContaxt.Provider
+      value={{ ...state, setGridView, setListView, sorting }}
+    >
       {children}
     </FilterContaxt.Provider>
   );

@@ -22,5 +22,5 @@ section {
 .two_row {
   display: grid;
   grid-template-rows: 0.2fr 1fr;
-  row-gap: 5rem;
+  gap: 5rem;
 }

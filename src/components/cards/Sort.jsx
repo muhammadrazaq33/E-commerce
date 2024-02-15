@@ -3,7 +3,7 @@ import { BsGrid3X3GapFill, BsList } from "react-icons/bs";
 import { useFilterContaxt } from "../../Contaxt/FilterContaxt";
 
 const Sort = () => {
-  const { FilterProducts, setListView, setGridView, Grid_view } =
+  const { FilterProducts, setListView, setGridView, Grid_view, sorting } =
     useFilterContaxt();
 
   return (
@@ -30,8 +30,22 @@ const Sort = () => {
         </button>
       </div>
 
-      <p className="text-[1.2rem]">{FilterProducts.length} total products</p>
-      <p className="text-[1.2rem]">Filter</p>
+      <p className="text-[1.1rem]">{FilterProducts.length} total products</p>
+      {/* selection =====> */}
+      <form action="#">
+        <label htmlFor="sort"></label>
+        <select
+          name="sort"
+          id="sort"
+          className="border-[2px] border-black px-1 py-1"
+          onClick={sorting}
+        >
+          <option value="lowest">Price (lowest)</option>
+          <option value="highest">Price (highest)</option>
+          <option value="a-z">Price (a-z)</option>
+          <option value="z-a">Price (z-a)</option>
+        </select>
+      </form>
     </div>
   );
 };
