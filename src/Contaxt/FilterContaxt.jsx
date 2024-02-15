@@ -23,6 +23,10 @@ const FilterContaxtProvider = ({ children }) => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
+  useEffect(() => {
+    dispatch({ type: "SORTED_DATA", payload: products });
+  }, [state.sorting_value]);
+
   // set grid view
   const setGridView = () => {
     return dispatch({ type: "SET_GRIDVIEW" });
