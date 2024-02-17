@@ -1,4 +1,5 @@
 import React from "react";
+import Products from "../Products";
 
 const FilterReducer = (state, action) => {
   switch (action.type) {
@@ -21,27 +22,63 @@ const FilterReducer = (state, action) => {
         Grid_view: false,
       };
 
+    case "GET_SORT_VALUE":
+      // let getSortingValue = document.getElementById("sort");
+      // let sort_value =
+      //   getSortingValue.options[getSortingValue.selectedIndex].value;
+      // console.log(sort_value);
+      // const { sort_value } = action.payload;
+      // console.log(sort_value);
+      return {
+        ...state,
+        sorting_value: action.payload,
+      };
+
     case "SORTED_DATA":
+      // const { FilterProducts } = state;
       let newSortData;
-      let tempSortData = [...action.payload];
+      // console.log(FilterProducts);
+      // let tempSortData = FilterProducts.slice;
+      // console.log("FilterProducts:", FilterProducts)
+      let tempSortData = [...action.payload]; // Create a copy of FilterProducts array
+      console.log("tempSortData before sorting:", tempSortData);
       if (state.sorting_value === "a-z") {
-        newSortData = tempSortData.sort((a, b) => a.name.localeCompare(b.name));
+        newSortData = tempSortData.sort((a, b) => {
+          return a.name.localeCompare(b.name);
+        });
       }
-      //   //   console.log(newSortData);
+      console.log("true", newSortData);
       return {
         ...state,
         FilterProducts: newSortData,
       };
-    case "GET_SORT_VALUE":
-      let getSortingValue = document.getElementById("sort");
-      let sort_value =
-        getSortingValue.options[getSortingValue.selectedIndex].value;
-      console.log(sort_value);
+
+    case "UPDATE_FILTER_VALUE":
+      const { name, value } = action.payload;
       return {
         ...state,
-        sorting_value: sort_value,
+        filters: {
+          ...state.filters,
+          text: value,
+        },
       };
 
+    case "SET_SEARCH":
+      const { AllProducts } = state;
+      // console.log(AllProducts);
+      let tempFilterProducts = [...AllProducts];
+      const { text } = state.filters;
+      if (text) {
+        tempFilterProducts = tempFilterProducts.filter((curEle) => {
+          return curEle.name.toLowerCase().includes(text);
+        });
+      }
+
+      // console.log(tempFilterProducts);
+      return {
+        ...state,
+        FilterProducts: tempFilterProducts,
+      };
     default:
       return state;
   }

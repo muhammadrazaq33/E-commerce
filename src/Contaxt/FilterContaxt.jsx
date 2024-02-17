@@ -7,8 +7,11 @@ const FilterContaxt = createContext();
 const initialState = {
   FilterProducts: [],
   AllProducts: [],
-  Grid_view: false,
-  sorting_value: "lowest",
+  Grid_view: true,
+  sorting_value: "a-z",
+  filters: {
+    text: "",
+  },
 };
 
 const FilterContaxtProvider = ({ children }) => {
@@ -23,10 +26,6 @@ const FilterContaxtProvider = ({ children }) => {
     dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
-  useEffect(() => {
-    dispatch({ type: "SORTED_DATA", payload: products });
-  }, [state.sorting_value]);
-
   // set grid view
   const setGridView = () => {
     return dispatch({ type: "SET_GRIDVIEW" });
@@ -38,13 +37,30 @@ const FilterContaxtProvider = ({ children }) => {
   };
 
   // sorting function
-  const sorting = () => {
-    return dispatch({ type: "GET_SORT_VALUE" });
+  const sorting = (e) => {
+    let sort_value = e.target.value;
+    // console.log(sort_value);
+    return dispatch({ type: "GET_SORT_VALUE", payload: sort_value });
   };
 
+  useEffect(() => {
+    dispatch({ type: "SORTED_DATA", payload: products });
+  }, [state.sorting_value]);
+
+  const updateFilterValue = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    // console.log(name);
+    // console.log(value);
+    return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
+  };
+
+  useEffect(() => {
+    dispatch({ type: "SET_SEARCH" });
+  }, [products, state.filters]);
   return (
     <FilterContaxt.Provider
-      value={{ ...state, setGridView, setListView, sorting }}
+      value={{ ...state, setGridView, setListView, sorting, updateFilterValue }}
     >
       {children}
     </FilterContaxt.Provider>

@@ -33,7 +33,7 @@ const Sort = () => {
       <p className="text-[1.1rem]">{FilterProducts.length} total products</p>
       {/* selection =====> */}
       <form action="#">
-        <label htmlFor="sort"></label>
+        {/* <label htmlFor="sort"></label> */}
         <select
           name="sort"
           id="sort"
