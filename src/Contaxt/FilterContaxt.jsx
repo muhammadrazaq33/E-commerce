@@ -40,12 +40,12 @@ const FilterContaxtProvider = ({ children }) => {
   const sorting = (e) => {
     let sort_value = e.target.value;
     // console.log(sort_value);
-    return dispatch({ type: "GET_SORT_VALUE", payload: sort_value });
+    dispatch({ type: "GET_SORT_VALUE", payload: { sort_value } });
   };
 
   useEffect(() => {
     dispatch({ type: "SORTED_DATA", payload: products });
-  }, [state.sorting_value]);
+  }, [products, state.sorting_value]);
 
   const updateFilterValue = (e) => {
     const name = e.target.name;

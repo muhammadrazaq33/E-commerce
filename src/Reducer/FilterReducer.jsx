@@ -27,11 +27,11 @@ const FilterReducer = (state, action) => {
       // let sort_value =
       //   getSortingValue.options[getSortingValue.selectedIndex].value;
       // console.log(sort_value);
-      // const { sort_value } = action.payload;
-      // console.log(sort_value);
+      const { sort_value } = action.payload;
+      console.log(sort_value);
       return {
         ...state,
-        sorting_value: action.payload,
+        sorting_value: sort_value,
       };
 
     case "SORTED_DATA":
@@ -41,16 +41,16 @@ const FilterReducer = (state, action) => {
       // let tempSortData = FilterProducts.slice;
       // console.log("FilterProducts:", FilterProducts)
       let tempSortData = [...action.payload]; // Create a copy of FilterProducts array
-      console.log("tempSortData before sorting:", tempSortData);
+      // console.log("tempSortData before sorting:", tempSortData);
       if (state.sorting_value === "a-z") {
         newSortData = tempSortData.sort((a, b) => {
           return a.name.localeCompare(b.name);
         });
       }
-      console.log("true", newSortData);
+      // console.log("true", newSortData);
       return {
         ...state,
-        FilterProducts: newSortData,
+        // FilterProducts: newSortData,
       };
 
     case "UPDATE_FILTER_VALUE":
