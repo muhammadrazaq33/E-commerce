@@ -11,6 +11,7 @@ const initialState = {
   sorting_value: "a-z",
   filters: {
     text: "",
+    category: "all",
   },
 };
 
@@ -22,9 +23,9 @@ const FilterContaxtProvider = ({ children }) => {
   // reducer hook for sending data into contaxt api
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => {
-    dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
-  }, [products]);
+  // useEffect(() => {
+  //   dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+  // }, [products]);
 
   // set grid view
   const setGridView = () => {
@@ -43,13 +44,13 @@ const FilterContaxtProvider = ({ children }) => {
     dispatch({ type: "GET_SORT_VALUE", payload: { sort_value } });
   };
 
-  useEffect(() => {
-    dispatch({ type: "SORTED_DATA", payload: products });
-  }, [products, state.sorting_value]);
+  // useEffect(() => {
+  //   dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+  // }, [products]);
 
   const updateFilterValue = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
+    let name = e.target.name;
+    let value = e.target.value;
     // console.log(name);
     // console.log(value);
     return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
@@ -57,7 +58,24 @@ const FilterContaxtProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: "SET_SEARCH" });
-  }, [products, state.filters]);
+    dispatch({ type: "SORTED_DATA", payload: products });
+  }, [products, state.sorting_value, state.filters]);
+
+  // const updateFilterValue = (e) => {
+  //   let name = e.target.name;
+  //   let value = e.target.value;
+  //   // console.log(name);
+  //   // console.log(value);
+  //   return dispatch({ type: "UPDATE_FILTER_VALUE", payload: { name, value } });
+  // };
+
+  // useEffect(() => {
+  //   dispatch({ type: "SET_SEARCH" });
+  // }, [products, state.filters]);
+  useEffect(() => {
+    dispatch({ type: "LOAD_FILTER_PRODUCTS", payload: products });
+  }, [products]);
+
   return (
     <FilterContaxt.Provider
       value={{ ...state, setGridView, setListView, sorting, updateFilterValue }}

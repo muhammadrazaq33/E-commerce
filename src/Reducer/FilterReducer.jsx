@@ -59,7 +59,7 @@ const FilterReducer = (state, action) => {
         ...state,
         filters: {
           ...state.filters,
-          text: value,
+          [name]: value,
         },
       };
 
@@ -68,11 +68,19 @@ const FilterReducer = (state, action) => {
       // console.log(AllProducts);
       let tempFilterProducts = [...AllProducts];
       const { text } = state.filters;
+
+      // console.log(tempFilterProducts);
       if (text) {
         tempFilterProducts = tempFilterProducts.filter((curEle) => {
           return curEle.name.toLowerCase().includes(text);
         });
       }
+
+      // if (category) {
+      //   tempFilterProducts = tempFilterProducts.filter((curEle) => {
+      //     return curEle.category === category;
+      //   });
+      // }
 
       // console.log(tempFilterProducts);
       return {

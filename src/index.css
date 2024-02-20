@@ -19,8 +19,8 @@ section {
   grid-template-columns: 0.2fr 1fr;
   gap: 5rem;
 }
-.two_row {
-  display: grid;
+/* .two_row { */
+/* display: grid;
   grid-template-rows: 0.2fr 1fr;
   gap: 5rem;
-}
+} */
