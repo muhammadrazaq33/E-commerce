@@ -32,7 +32,8 @@ const Sort = () => {
               name="text"
               value={text}
               onChange={updateFilterValue}
-              className=" bg-slate-200 text-slate-950 h-[2.4rem] sm:w-[15rem] w-[13rem] ml-0 sm:mt-0 mt-2.5 sm:ml-1.5 "
+              placeholder="SEARCH"
+              className=" bg-slate-200 text-slate-950 h-[2.4rem] sm:w-[15rem] w-[13rem] ml-0 sm:mt-0 mt-2.5 sm:ml-1.5 pl-3 rounded-sm border-[1px] border-amber-400"
             />
           </form>
         </div>
