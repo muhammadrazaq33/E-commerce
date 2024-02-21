@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
 
-const AddToCart = ({ products }) => {
+const AddToCart = ({ product }) => {
   const { id, stock, colors } = products;
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);

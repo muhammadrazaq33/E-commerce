@@ -108,7 +108,7 @@ const SinglePage = () => {
 
             {/* AddToCart Component ====> */}
             <div className=" mt-2">
-              {stock > 0 && <AddToCart products={SingleProduct1} />}
+              {stock > 0 && <AddToCart product={SingleProduct1} />}
             </div>
           </div>
         </div>
