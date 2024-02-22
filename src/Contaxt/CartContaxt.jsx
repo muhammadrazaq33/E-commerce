@@ -20,8 +20,17 @@ const CartProvider = ({ children }) => {
       payload: { id, color, amount, product },
     });
   };
+
+  // REMOVE CART
+  const removeCart = (id) => {
+    dispatch({
+      type: "REMOVE_TO_CART",
+      payload: id,
+    });
+  };
+
   return (
-    <CartContaxt.Provider value={{ ...state, addCart }}>
+    <CartContaxt.Provider value={{ ...state, addCart, removeCart }}>
       {children}
     </CartContaxt.Provider>
   );

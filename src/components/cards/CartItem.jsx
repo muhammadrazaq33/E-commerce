@@ -2,8 +2,10 @@ import React from "react";
 import NumberFormate from "./NumberFormate";
 import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
+import { useCartContaxt } from "../../Contaxt/CartContaxt";
 
 const CartItem = ({ id, image, amount, price, name, color }) => {
+  const { removeCart } = useCartContaxt();
   //   const [color, setColor] = useState(colors[0]);
   //   const [amount, setAmount] = useState(1);
 
@@ -64,7 +66,7 @@ const CartItem = ({ id, image, amount, price, name, color }) => {
 
       {/* DEleTe button  =======>*/}
       <div>
-        <FaTrash className=" text-[red]" />
+        <FaTrash className=" text-[red]" onClick={() => removeCart(id)} />
       </div>
     </div>
   );

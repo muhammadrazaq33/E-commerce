@@ -24,6 +24,16 @@ const CartReducer = (state, action) => {
     };
   }
 
+  if (action.type === "REMOVE_TO_CART") {
+    const updateCart = state.cart.filter((curEle) => {
+      return curEle.id !== action.payload;
+    });
+    return {
+      ...state,
+      cart: updateCart,
+    };
+  }
+
   return state;
 };
 
