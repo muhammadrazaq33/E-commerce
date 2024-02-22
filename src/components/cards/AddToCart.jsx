@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
+import { useCartContaxt } from "../../Contaxt/CartContaxt";
 
 const AddToCart = ({ product }) => {
-  const { id, stock, colors } = products;
+  const { id, stock, colors } = product;
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -17,6 +18,8 @@ const AddToCart = ({ product }) => {
   const setDecrease = () => {
     amount > 1 ? setAmount(amount - 1) : setAmount(amount);
   };
+
+  const { addCart } = useCartContaxt();
 
   return (
     <div className=" flex flex-col gap-4">
@@ -50,7 +53,10 @@ const AddToCart = ({ product }) => {
 
       {/* BUTTON  =======> */}
       <NavLink to="/cart">
-        <button className=" px-5 py-3 bg-amber-400 font-medium">
+        <button
+          onClick={() => addCart(id, color, amount, product)}
+          className=" px-5 py-3 bg-amber-400 font-medium"
+        >
           ADD TO CART
         </button>
       </NavLink>

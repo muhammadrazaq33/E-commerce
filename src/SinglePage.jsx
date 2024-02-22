@@ -29,7 +29,7 @@ const SinglePage = () => {
     company,
     price,
     description,
-    category,
+    // category,
     stock,
     stars,
     reviews,
@@ -131,12 +131,12 @@ const Icons = [
     text: "30 Days Replacement",
   },
   {
-    id: 1,
+    id: 3,
     icon: <TbTruckDelivery />,
     text: "Abdul Delivered ",
   },
   {
-    id: 1,
+    id: 4,
     icon: <MdSecurity />,
     text: "2 Year Warranty ",
   },
