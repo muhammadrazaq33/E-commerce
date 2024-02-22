@@ -61,7 +61,7 @@ const CartItem = ({ id, image, amount, price, name, color }) => {
 
       {/* SUBTOTAL  ===========> */}
       <div>
-        <NumberFormate price={price * 2} />
+        <NumberFormate price={price * amount} />
       </div>
 
       {/* DEleTe button  =======>*/}
