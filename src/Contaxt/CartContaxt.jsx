@@ -8,7 +8,7 @@ const CartProvider = ({ children }) => {
   let getLocaleStorageData = () => {
     let cartData = localStorage.getItem("Cart_Data");
 
-    if (cartData == []) {
+    if (!cartData || cartData === "null" || JSON.parse(cartData).length === 0) {
       return [];
     } else {
       return JSON.parse(cartData);
@@ -46,8 +46,13 @@ const CartProvider = ({ children }) => {
     localStorage.setItem("Cart_Data", JSON.stringify(state.cart));
   }, [state.cart]);
 
+  // clearCart
+  const clearCart = () => {
+    dispatch({ type: "Clear_Cart" });
+  };
+
   return (
-    <CartContaxt.Provider value={{ ...state, addCart, removeCart }}>
+    <CartContaxt.Provider value={{ ...state, addCart, removeCart, clearCart }}>
       {children}
     </CartContaxt.Provider>
   );
