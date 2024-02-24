@@ -10,23 +10,47 @@ const CartReducer = (state, action) => {
     );
     console.log(existingProduct);
 
-    // console.log(product);
-    let ProductCart;
-    ProductCart = {
-      id: id + color,
-      name: product.name,
-      color,
-      amount,
-      image: product.image[0].url,
-      price: product.price,
-      max: product.stock,
-    };
+    if (existingProduct) {
+      // UPDATE ProDUCT
+      let updateProducts = state.cart.map((curEle) => {
+        if (curEle.id == id + color) {
+          let newAmount = curEle.amount + amount;
+          if (newAmount >= curEle.max) {
+            newAmount = curEle.max;
+          }
+          return {
+            ...curEle,
+            amount: newAmount,
+          };
+        } else {
+          return curEle;
+        }
+      });
+
+      // cart
+      return {
+        ...state,
+        cart: updateProducts,
+      };
+    } else {
+      let ProductCart;
+      ProductCart = {
+        id: id + color,
+        name: product.name,
+        color,
+        amount,
+        image: product.image[0].url,
+        price: product.price,
+        max: product.stock,
+      };
+
+      return {
+        ...state,
+        cart: [...state.cart, ProductCart],
+      };
+    }
 
     // console.log(ProductCart);
-    return {
-      ...state,
-      cart: [...state.cart, ProductCart],
-    };
   }
 
   if (action.type === "REMOVE_TO_CART") {
