@@ -4,19 +4,19 @@ import CartAmountToggle from "./CartAmountToggle";
 import { FaTrash } from "react-icons/fa";
 import { useCartContaxt } from "../../Contaxt/CartContaxt";
 
-const CartItem = ({ id, image, amount, price, name, color }) => {
+const CartItem = ({ id, image, amount, price, name, color, max }) => {
   const { removeCart } = useCartContaxt();
   //   const [color, setColor] = useState(colors[0]);
-  //   const [amount, setAmount] = useState(1);
+  // const [amount1, setAmount] = useState(1);
 
   // Increasing function
   const setIncrease = () => {
-    // stock > amount ? setAmount(amount + 1) : setAmount(1);
+    // max > amount1 ? setAmount(amount1 + 1) : setAmount(1);
   };
 
   // Decreasing function
   const setDecrease = () => {
-    // amount > 1 ? setAmount(amount - 1) : setAmount(amount);
+    // amount1 > 1 ? setAmount(amount1 - 1) : setAmount(amount1);
   };
 
   return (
