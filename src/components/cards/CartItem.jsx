@@ -5,19 +5,7 @@ import { FaTrash } from "react-icons/fa";
 import { useCartContaxt } from "../../Contaxt/CartContaxt";
 
 const CartItem = ({ id, image, amount, price, name, color, max }) => {
-  const { removeCart } = useCartContaxt();
-  //   const [color, setColor] = useState(colors[0]);
-  // const [amount1, setAmount] = useState(1);
-
-  // Increasing function
-  const setIncrease = () => {
-    // max > amount1 ? setAmount(amount1 + 1) : setAmount(1);
-  };
-
-  // Decreasing function
-  const setDecrease = () => {
-    // amount1 > 1 ? setAmount(amount1 - 1) : setAmount(amount1);
-  };
+  const { removeCart, setIncrease, setDecrease } = useCartContaxt();
 
   return (
     <div className="grid grid-cols-5 place-items-center">
@@ -54,12 +42,12 @@ const CartItem = ({ id, image, amount, price, name, color, max }) => {
         {/* ADD TO CART  ===========>*/}
         <CartAmountToggle
           amount={amount}
-          setIncrease={setIncrease}
-          setDecrease={setDecrease}
+          setIncrease={() => setIncrease(id)}
+          setDecrease={() => setDecrease(id)}
         />
       </div>
 
-      {/* SUBTOTAL  ===========> */}
+      {/* SUBTOTAL  ==========> */}
       <div>
         <NumberFormate price={price * amount} />
       </div>

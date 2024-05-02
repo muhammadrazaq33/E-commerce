@@ -6,7 +6,7 @@ import Contact from "./Contact";
 import Cart from "./Cart";
 import ErrorPage from "./ErrorPage";
 import Header from "./components/Header";
-import { Footer } from "./components/Footer.jsX";
+import { Footer } from "./components/Footer.jsx";
 import SinglePage from "./SinglePage";
 
 function App() {

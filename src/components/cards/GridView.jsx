@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product.jsX";
+import Product from "./Product.jsx";
 
 const GridView = ({ FilterProducts }) => {
   return (

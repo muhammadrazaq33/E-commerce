@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
+import { useCartContaxt } from "../Contaxt/CartContaxt";
 
 const Navbar = ({ Links }) => {
+  const { total_item } = useCartContaxt();
   return (
     <nav>
       <div className="flex  items-center gap-5 lg:gap-7">
@@ -25,7 +27,7 @@ const Navbar = ({ Links }) => {
         <NavLink to="/cart" className=" relative">
           <FiShoppingCart className=" relative text-[3.2rem]" />
           <span className="absolute text-[1rem] bg-amber-300 rounded-[50%] grid place-content-center -top-[20%] left-[70%] w-[1.8rem] h-[1.8rem]">
-            10
+            {total_item}
           </span>
         </NavLink>
       </div>

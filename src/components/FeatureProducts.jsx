@@ -1,6 +1,6 @@
 import React from "react";
 import { useCustomHook } from "../Contaxt/ProductContaxt";
-import Product from "./cards/Product.jsX";
+import Product from "./cards/Product.jsx";
 
 export const FeatureProducts = () => {
   const { isLoading, featureProducts } = useCustomHook();

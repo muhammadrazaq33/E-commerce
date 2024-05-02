@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "./components/HeroSection";
-import { Services } from "./components/Services.JSX";
+import { Services } from "./components/Services.jsx";
 import Trusted from "./components/Trusted";
 import { FeatureProducts } from "./components/FeatureProducts";
 
