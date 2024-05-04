@@ -92,16 +92,48 @@ const CartReducer = (state, action) => {
     };
   }
 
-  if (action.type === "ADD_TOTAL_ITEM") {
-    let updateCartItem = state.cart.reduce((accumulator, curEle) => {
-      let { amount } = curEle;
-      accumulator = accumulator + amount;
-      return accumulator;
-    }, 0);
+  // if (action.type === "ADD_TOTAL_ITEM") {
+  //   let updateCartItem = state.cart.reduce((accumulator, curEle) => {
+  //     let { amount } = curEle;
+  //     accumulator = accumulator + amount;
+  //     return accumulator;
+  //   }, 0);
+
+  //   return {
+  //     ...state,
+  //     total_item: updateCartItem,
+  //   };
+  // }
+
+  // if (action.type === "ADD_TOTAL_PRICE") {
+  //   let updateCartPrice = state.cart.reduce((accumulator, curEle) => {
+  //     let { price, amount } = curEle;
+  //     accumulator = accumulator + price * amount;
+  //     return accumulator;
+  //   }, 0);
+
+  //   return {
+  //     ...state,
+  //     total_price: updateCartPrice,
+  //   };
+  // }
+
+  if (action.type === "ADD_TOTAL_PRICE_ITEM") {
+    let { total_item, total_price } = state.cart.reduce(
+      (accumulator, curEle) => {
+        let { amount, price } = curEle;
+        accumulator.total_item += amount;
+        accumulator.total_price += amount * price;
+
+        return accumulator;
+      },
+      { total_item: 0, total_price: 0 }
+    );
 
     return {
       ...state,
-      total_item: updateCartItem,
+      total_item,
+      total_price,
     };
   }
 

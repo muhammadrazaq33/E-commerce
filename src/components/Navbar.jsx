@@ -2,9 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { FiShoppingCart } from "react-icons/fi";
 import { useCartContaxt } from "../Contaxt/CartContaxt";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = ({ Links }) => {
   const { total_item } = useCartContaxt();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   return (
     <nav>
       <div className="flex  items-center gap-5 lg:gap-7">
@@ -23,6 +25,29 @@ const Navbar = ({ Links }) => {
             );
           })}
         </ul>
+        {/* login button */}
+        {isAuthenticated ? (
+          <div className="bg-amber-300 px-5 py-2 rounded-sm">
+            <button
+              className="text-[1.2rem] font-semibold"
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
+            >
+              Log Out
+            </button>
+          </div>
+        ) : (
+          <div className="bg-amber-300 px-5 py-2 rounded-sm">
+            <button
+              className="text-[1.2rem] font-semibold"
+              onClick={() => loginWithRedirect()}
+            >
+              Login
+            </button>
+          </div>
+        )}
+        {/*end of  login button */}
         {/* button */}
         <NavLink to="/cart" className=" relative">
           <FiShoppingCart className=" relative text-[3.2rem]" />

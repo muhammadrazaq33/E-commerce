@@ -64,22 +64,22 @@ const Cart = () => {
           <div className="flex flex-col gap-4 bg-slate-200 mr-4 p-8 rounded-xl">
             <div className="grid grid-cols-2 gap-6 ">
               <p>SubTotal:</p>
-              <div className="font-bold justify-self-end">
+              <p className="font-bold justify-self-end">
                 <NumberFormate price={total_price} />
-              </div>
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <p>Shipping Fee:</p>
-              <div className="font-bold justify-self-end">
+              <p className="font-bold justify-self-end">
                 <NumberFormate price={Shipping_fee} />
-              </div>
+              </p>
             </div>
             <div className="h-[0.3px] w-full bg-[black]"></div>
             <div className="grid grid-cols-2 gap-6">
               <p>Total:</p>
-              <div className="font-bold justify-self-end">
+              <p className="font-bold justify-self-end">
                 <NumberFormate price={total_price + Shipping_fee} />
-              </div>
+              </p>
             </div>
           </div>
         </div>
